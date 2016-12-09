@@ -1,4 +1,4 @@
-#include "EWMC-Firmware.h"
+#include "EWFWC-Firmware.h"
 
 // Motor + Endstop calibration variables
 unsigned int Near_Forward[3];       // Time constant for each motor by which endstop should disengage

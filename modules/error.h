@@ -1,6 +1,6 @@
 /* Error Code Module
  *
- * Used to initialize and control the status LED on the EWMC hardware to show error codes
+ * Used to initialize and control the status LED on the EWFWC hardware to show error codes
  *
  * Error codes are displayed by blinking the corresponding number of times to the error code.
  * If multiple errors are set, each error is displayed in increasing order.

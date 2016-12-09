@@ -1,6 +1,10 @@
 /* Power Output Handling Module
  *
- * Used to initialize, control, and manage the power output capabilities of the EWMC hardware
+ * Used to initialize, control, and manage the power output capabilities of the EWFWC hardware
+ *
+ *
+ * TODO
+ * Update this
  *
  * This includes three motors and an electromagnet. All outputs are PWM-enabled.
  * The three motors also allow for directionality control.

@@ -1,11 +1,10 @@
-/* EWMC Firmware
+/* EWFWC Firmware
  *
- * Allows for interactive control of the coal mine module
+ * Allows for interactive control of the ferris wheel module
  *
- * See the EWMC Firmware documentation for details.
+ * See the EWFWC Firmware documentation for details.
  *
- * State machines are used to keep track of all motors independently, using non-blocking code.
- * The electromagnet is grouped in operation with the clamshell motor.
+ * TODO
  *
  * Written by Alex Tavares <tavaresa13@gmail.com>
  */
