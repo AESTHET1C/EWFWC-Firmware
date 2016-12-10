@@ -51,14 +51,6 @@ void playAudio(audio_clip sound) {
 	return;
 }
 
-void beep() {
-	playAudio(AUDIO_BEEP);
-	while(audioPlaying()) {
-		// Do nothing
-	}
-	delay(BEEP_DELAY);
-}
-
 bool audioPlaying() {
 	if(Audio_Playing) {
 		if((millis() - Audio_Start) >= Audio_Duration) {

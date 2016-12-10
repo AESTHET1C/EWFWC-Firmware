@@ -5,10 +5,6 @@
  * This includes configuring pins on startup, sending SPI commands,
  * and keeping track of playback state.
  *
- * Note that only one audio clip is capable of playing at a time. All audio clips,
- * with the exception of the beep, are expected to be of equal length. If this is not the case,
- * set AUDIO_DURATION to match the longest clip duration.
- *
  * Written by Alex Tavares <tavaresa13@gmail.com>
  */
 
@@ -20,15 +16,9 @@
 // CONFIGURATION VARIABLES
 /////////////////////////
 
-const unsigned int BEEP_DELAY = 150;
-
 // Audio clip durations
-const unsigned int AUDIO_DURATION[] = {
-	100,
-	2553,
-	2506,
-	854,
-	1000
+const unsigned int AUDIO_DURATION[1] = {
+	24657
 };
 
 
@@ -47,11 +37,7 @@ const byte SPI_SS_PIN = 8;
 
 // Available audio clips
 typedef enum {
-	AUDIO_BEEP = 0,
-	AUDIO_EXPLOSION = 1,
-	AUDIO_CANARY = 2,
-	AUDIO_COUGH_1 = 3,
-	AUDIO_COUGH_2 = 4
+	AUDIO_MUSIC = 0
 } audio_clip;
 
 /////////////////////////
@@ -69,19 +55,11 @@ const byte ISD_SET_PLAY = 0x80;
 const uint16_t ISD_APC_DEFAULT_CONFIG = ((B00000100 << 8) + B10100000);
 
 // Audio pointer arrays
-const uint16_t ISD_AUDIO_START_PTR[5] = {
-	0x010,
-	0x011,
-	0x028,
-	0x03F,
-	0x047
+const uint16_t ISD_AUDIO_START_PTR[1] = {
+	0x010
 };
-const uint16_t ISD_AUDIO_STOP_PTR[5] = {
-	0x010,
-	0x027,
-	0x03E,
-	0x046,
-	0x04F
+const uint16_t ISD_AUDIO_STOP_PTR[1] = {
+	0x0F4
 };
 
 
@@ -111,15 +89,6 @@ void playAudio(audio_clip sound);
  *
  * Affects Audio_Start, Audio_Duration, and Audio_State
  * INPUT:  Clip to play
- */
-
-void beep();
-/*
- * Plays the BEEP audio clip
- *
- * This function waits for the beep to complete, then delays an additional BEEP_DELAY milliseconds.
- *
- * Affects Audio_Start and Audio_Duration
  */
 
 bool audioPlaying();
