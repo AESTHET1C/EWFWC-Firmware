@@ -1,9 +1,9 @@
 OVERVIEW
 
-The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. It is intended to be run from a single 12 volt power source. The EWFWC is intended to control the following elements of the ferris wheel module:
+The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the Ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. It is intended to be run from a single 12 volt power source. The EWFWC is intended to control the following elements of the Ferris wheel module:
 
 + Activate features only when a button is pressed by the public
-+ Rotate the ferris wheel
++ Rotate the Ferris wheel
 + Rotate a disc that simulates an excited crowd
 + Flash two sets of LEDs in an alternating pattern
 + Play music and/or sound effects

@@ -3,7 +3,7 @@
 bool Error_Status;
 unsigned long Error_Tick_Start = 0;
 
-void initErrors() {
+void initError() {
 	setError(false);
 	pinMode(ERROR_PIN, OUTPUT);
 	return;

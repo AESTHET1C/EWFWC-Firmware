@@ -1,13 +1,13 @@
 #Overview of the Firmware
 
-The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. The EWFWC Firmware is specific to both the EWFWC board and the ferris wheel module itself. It allows public interaction with the ferris wheel module in the following ways:
+The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the Ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. The EWFWC Firmware is specific to both the EWFWC board and the Ferris wheel module itself. It allows public interaction with the Ferris wheel module in the following ways:
 
 + Offer a single arcade button for the public to press
 + Begin playing music when the arcade button is pressed
 + Start the following process when the arcade button is pressed*:
-	+ Rotate the ferris wheel for 7 seconds
-	+ Move the fake crowd for 2 seconds when the ferris wheel stops moving
-+ Flash two colors of LEDs on the ferris wheel in an alternating pattern during this process
+	+ Alternate between two colors of LEDs on the Ferris wheel once per second
+	+ Rotate the Ferris wheel for 7 seconds
+	+ Move the fake crowd for 2 seconds when the Ferris wheel stops moving
 + Repeat this process until the music ends and the arcade button is released
 + Repeatedly loop the music as needed, with a 5 second gap between playback
 + Continue these actions uninterrupted so long as the arcade button is being pressed
@@ -19,7 +19,7 @@ The Firmware also features a brief self-check on startup to prevent short circui
 
 #Setup Checklist
 
-This checklist assumes the EWFWC board is already screwed to the bottom of the ferris wheel module and that both motors are already plugged into the board, in addition to the speaker, LEDs, and button connectors. For information on electrical cennections and their locations, see "**Wiring Connections**".
+This checklist assumes the EWFWC board is already screwed to the bottom of the Ferris wheel module and that both motors are already plugged into the board, in addition to the speaker, LEDs, and button connectors. For information on electrical cennections and their locations, see "**Wiring Connections**".
 
 ---
 

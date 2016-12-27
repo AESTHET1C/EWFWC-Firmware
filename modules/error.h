@@ -38,7 +38,7 @@ const byte ERROR_PIN = 13;
 // AVAILABLE FUNCTIONS
 /////////////////////////
 
-void initErrors();
+void initError();
 /*
  * Initializes error code handling
  * Must be called at startup
