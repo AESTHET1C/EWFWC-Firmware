@@ -1,4 +1,4 @@
-#include "EWMC-Firmware.h"
+#include "EWFWC-Firmware.h"
 
 // Audio state variables
 audio_state Audio_State = IDLE;
