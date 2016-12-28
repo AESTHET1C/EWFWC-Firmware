@@ -19,9 +19,10 @@
 // CONFIGURATION VARIABLES
 /////////////////////////
 
-const unsigned int MOTOR_CYCLE_TIME[2] = {7000, 0};
-const unsigned int LED_CYCLE_TIME = 1000;
-const unsigned int AUDIO_COOLDOWN_DELAY = 5000;
+const unsigned int MOTOR_CYCLE_TIME[2] = {7000, 0000};    // Remove this when crowd is installed
+//const unsigned int MOTOR_CYCLE_TIME[2] = {7000, 2000};  // Uncomment this when crowd is installed
+const unsigned int LED_CYCLE_TIME = 1226;
+const unsigned int AUDIO_COOLDOWN_DELAY = 6000;
 
 // Startup check values
 const unsigned int CHECK_DELAY[3] = {500, 250, 250};

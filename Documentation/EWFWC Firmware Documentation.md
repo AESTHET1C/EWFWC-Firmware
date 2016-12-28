@@ -5,7 +5,7 @@ The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered boar
 + Offer a single arcade button for the public to press
 + Begin playing music when the arcade button is pressed
 + Start the following process when the arcade button is pressed*:
-	+ Alternate between two colors of LEDs on the Ferris wheel once per second
+	+ Alternate between two colors of LEDs on the Ferris wheel about once per second (approximately in time with music)
 	+ Rotate the Ferris wheel for 7 seconds
 	+ Move the fake crowd for 2 seconds when the Ferris wheel stops moving
 + Repeat this process until the music ends and the arcade button is released
@@ -24,6 +24,7 @@ This checklist assumes the EWFWC board is already screwed to the bottom of the F
 ---
 
 - [ ] Plug in connector D5 to the train table and apply power
+- [ ] Wait for the status LED to finish blinking 4 times
 - [ ] Verify the self-check routine does not fail (See "**Startup Self-Check**")
 
 
@@ -33,7 +34,7 @@ This checklist assumes the EWFWC board is already screwed to the bottom of the F
 
 Due to the wiring method of the wheel LEDs, the Firmware must verify that no accidental shorts are made between the frame and ground. To do this, a quick (2-second) and automated self-check sequence occurs on power-up. This check involves attempting to power the LEDs in both polarities and detecting if a brown-out reset is caused. The sequence also accounts for standard supply noise.
 
-If the LEDs are found to be shorted, the status (red) LED on the EWFWC board will continuously flash to indicate an error. Normal operation of the Firmware continues with the LED output disabled. This error state can be cleared by removing the short and resetting the EWFWC board.
+If a brownout occurs, the status (red) LED on the EWFWC board will continuously flash to indicate an error. Normal operation of the Firmware continues with the LED output disabled. This error state can be cleared by removing the short and resetting the EWFWC board.
 
 
 #Wiring Connections

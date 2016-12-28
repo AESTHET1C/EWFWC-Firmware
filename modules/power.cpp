@@ -2,9 +2,8 @@
 
 bool Motor_Status_Enabled[2];
 
-bool LED_Status_Enabled;
+bool LED_Status_Enabled = true;
 led_dir LED_Status_Direction = DIR_A;
-bool LED_Disabled = false;             // Disable until reset
 
 void initPowerOutputs() {
 
@@ -41,7 +40,7 @@ void setMotorOutput(motor_group motor, bool enable) {
 }
 
 void setLEDOutput(bool enable) {
-	if(enable && !LED_Disabled) {
+	if(enable && LED_Status_Enabled) {
 		digitalWrite(LED_PIN[1], LOW);                              // Disable first to prevent shorting
 		digitalWrite(LED_PIN[0], (LED_Status_Direction == DIR_A));
 		digitalWrite(LED_PIN[1], (LED_Status_Direction == DIR_B));
@@ -60,12 +59,11 @@ void reverseLEDOutput() {
 	else {
 		LED_Status_Direction = DIR_A;
 	}
-	setLEDOutput(LED_Status_Enabled);
+	setLEDOutput(true);
 	return;
 }
 
 void disableLEDOutput() {
-	LED_Disabled = true;
 	LED_Status_Enabled = false;
 	setLEDOutput(false);
 	return;

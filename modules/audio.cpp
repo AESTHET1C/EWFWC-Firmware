@@ -5,6 +5,7 @@ unsigned int Audio_Duration;
 bool Audio_Playing = false;
 
 void initAudio() {
+
 	// Prepare SPI outputs
 	digitalWrite(SPI_SCLK_PIN, HIGH);
 	digitalWrite(SPI_MOSI_PIN, LOW);

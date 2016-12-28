@@ -39,4 +39,6 @@ The remaining connections (left to right: GPIO, reversible output, speaker) shar
 
 While intended to be run from a 12 volt supply, the EWFWC is capable of being run from any voltage between approximately 5.5 and 16 volts. The two high-power outputs and H-bridge use this voltage, while the GPIO connection is 5 volt logic via an internal regulator.
 
-The two high-power outputs are rated for 3 amps of continuous current. The GPIO output is rated for a continuous 40 milliamps. The H-bridge is rated for a continuous 150 milliamps.  Peak currents are not rated.
+The two high-power outputs are rated for 3 amps of continuous current. The GPIO output is rated for a continuous 40 milliamps. The H-bridge is rated for a continuous 100 milliamps.  Peak currents are not rated.
+
+Note that the H-bridge is current-limited to approximately 150 milliamps.

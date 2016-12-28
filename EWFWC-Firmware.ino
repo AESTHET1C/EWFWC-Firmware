@@ -2,7 +2,7 @@
 
 // Audio state variables
 audio_state Audio_State = IDLE;
-unsigned int Audio_Delay_Start = 0;
+unsigned long Audio_Delay_Start = 0;
 
 void setup() {
 
@@ -73,12 +73,14 @@ void loop() {
 							setMotorOutput(WHEEL_MOTOR, false);
 							setMotorOutput(CROWD_MOTOR, true);
 							Active_Motor = CROWD_MOTOR;
+							Motor_Cycle_Start = millis();
 							break;
 						}
 						case CROWD_MOTOR: {
 							setMotorOutput(CROWD_MOTOR, false);
 							setMotorOutput(WHEEL_MOTOR, true);
 							Active_Motor = WHEEL_MOTOR;
+							Motor_Cycle_Start = millis();
 							break;
 						}
 					}
@@ -95,7 +97,7 @@ void loop() {
 			handleErrorCodeDisplay();
 		}
 
-		while((millis() - LED_Cycle_Start) >= LED_CYCLE_TIME) {
+		while((millis() - LED_Cycle_Start) < LED_CYCLE_TIME) {
 			handleErrorCodeDisplay();
 		}
 		setLEDOutput(false);
