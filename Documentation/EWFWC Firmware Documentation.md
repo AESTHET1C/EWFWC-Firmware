@@ -1,4 +1,4 @@
-#Overview of the Firmware
+# Overview of the Firmware
 
 The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the Ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. The EWFWC Firmware is specific to both the EWFWC board and the Ferris wheel module itself. It allows public interaction with the Ferris wheel module in the following ways:
 
@@ -17,7 +17,7 @@ The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered boar
 The Firmware also features a brief self-check on startup to prevent short circuits on the LED circuit. In the event that a short is detected, the Firmware will disable the operation of the LEDs and display an error code on the EWFWC board's LED.
 
 
-#Setup Checklist
+# Setup Checklist
 
 This checklist assumes the EWFWC board is already screwed to the bottom of the Ferris wheel module and that both motors are already plugged into the board, in addition to the speaker, LEDs, and button connectors. For information on electrical cennections and their locations, see "**Wiring Connections**".
 
@@ -28,7 +28,7 @@ This checklist assumes the EWFWC board is already screwed to the bottom of the F
 - [ ] Verify the self-check routine does not fail (See "**Startup Self-Check**")
 
 
-#Startup Self-Check
+# Startup Self-Check
 
 **Note:** As of 2016, the self check should never fail, as the wheel LEDs are unused. This section may be ignored.
 
@@ -37,7 +37,7 @@ Due to the wiring method of the wheel LEDs, the Firmware must verify that no acc
 If a brownout occurs, the status (red) LED on the EWFWC board will continuously flash to indicate an error. Normal operation of the Firmware continues with the LED output disabled. This error state can be cleared by removing the short and resetting the EWFWC board.
 
 
-#Wiring Connections
+# Wiring Connections
 
 **Note:** As of 2016, the crowd motor and wheel LEDs are unused. These positions should not have anything plugged in to them.
 

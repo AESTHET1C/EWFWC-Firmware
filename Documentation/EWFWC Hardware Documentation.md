@@ -1,4 +1,4 @@
-OVERVIEW
+# Overview
 
 The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered board that attaches to the bottom of the Ferris wheel module within the Eli Whitney Museum's seasonal train display and controls various features of the module. It is intended to be run from a single 12 volt power source. The EWFWC is intended to control the following elements of the Ferris wheel module:
 
@@ -11,7 +11,7 @@ The Eli Whitney Ferris Wheel Controller ("EWFWC") is an ATmega 328P-powered boar
 Additionally, the EWFWC has an on-board LED to display status and error codes to the staff in the event of a malfunction.
 
 
-#Capabilities
+# Capabilities
 
 The EWFWC contains a socketed Adafruit Pro Trinket 5V and Nuvoton ISD1740 for ease of programming and debugging. It uses several MOSFETs to drive high-power loads and a bipolar H-bridge to offer a reversible output. The EWFWC features the following elements:
 
@@ -24,7 +24,7 @@ The EWFWC contains a socketed Adafruit Pro Trinket 5V and Nuvoton ISD1740 for ea
 The two high-power outputs contain snubber diodes to prevent voltage spikes when powering reactive loads.
 
 
-#Connectivity
+# Connectivity
 
 **Note:** This section assumes connector contacts and housings are purchased separately.
 
@@ -35,7 +35,7 @@ The two high-power outputs feature shrouded right-angle headers with latch holde
 The remaining connections (left to right: GPIO, reversible output, speaker) share a standard 3x2 right-angle header, where each pin belongs to a vertical pair. On the GPIO pair, the top pin is an unbuffered connection to the ATmega 328P and the lower pin is ground. To utilize all three pairs, standard non-polarized housings (Molex 50-57-9002) should be used.
 
 
-#Power Supply and Ratings
+# Power Supply and Ratings
 
 While intended to be run from a 12 volt supply, the EWFWC is capable of being run from any voltage between approximately 5.5 and 16 volts. The two high-power outputs and H-bridge use this voltage, while the GPIO connection is 5 volt logic via an internal regulator.
 
