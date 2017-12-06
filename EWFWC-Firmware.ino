@@ -43,12 +43,13 @@ void loop() {
 		setMotorOutput(Active_Motor, true);
 		while(Module_Active) {
 			bool Audio_Playing_Temp = audioPlaying();
+			bool Button_Pressed_Temp = (!digitalRead(BUTTON_PIN));
 
 			if(!Audio_Playing_Temp) {
 				switch(Audio_State) {
 					default:
 					case IDLE: {
-						if(!digitalRead(BUTTON_PIN)) {
+						if(Button_Pressed_Temp) {
 							playAudio(AUDIO_MUSIC);
 							Audio_State = PLAY;
 						}
@@ -68,7 +69,7 @@ void loop() {
 				}
 			}
 			if((millis() - Motor_Cycle_Start) >= MOTOR_CYCLE_TIME[Active_Motor]) {
-				if(Audio_Playing_Temp || (!digitalRead(BUTTON_PIN))) {
+				if(Audio_Playing_Temp || Button_Pressed_Temp) {
 					switch(Active_Motor) {
 						default:
 						case WHEEL_MOTOR: {
