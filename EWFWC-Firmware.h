@@ -31,7 +31,7 @@ const uint16_t EEPROM_TESTING_PTR = 0x000;
 // Button anti-noise configuration
 // The number of consecutive cycles  the button must be engaged for it to register as a press
 // This is to prevent electrical noise from falsely triggering the arcade button
-const BUTTON_REQUIRED_COUNT = 100;
+const unsigned int BUTTON_REQUIRED_COUNT = 100;
 
 
 /////////////////////////
