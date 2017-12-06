@@ -42,7 +42,9 @@ void loop() {
 		setLEDOutput(true);
 		setMotorOutput(Active_Motor, true);
 		while(Module_Active) {
-			if(!audioPlaying()) {
+			bool Audio_Playing_Temp = audioPlaying();
+
+			if(!Audio_Playing_Temp) {
 				switch(Audio_State) {
 					default:
 					case IDLE: {
@@ -65,8 +67,8 @@ void loop() {
 					}
 				}
 			}
-			if((millis() - Motor_Cycle_Start) >= MOTOR_CYCLE_TIME[Active_Motor]){
-				if(audioPlaying() || (!digitalRead(BUTTON_PIN))) {
+			if((millis() - Motor_Cycle_Start) >= MOTOR_CYCLE_TIME[Active_Motor]) {
+				if(Audio_Playing_Temp || (!digitalRead(BUTTON_PIN))) {
 					switch(Active_Motor) {
 						default:
 						case WHEEL_MOTOR: {
