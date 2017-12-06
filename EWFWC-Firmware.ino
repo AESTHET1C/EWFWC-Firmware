@@ -4,6 +4,9 @@
 audio_state Audio_State = IDLE;
 unsigned long Audio_Delay_Start = 0;
 
+// Button engagement count variable
+unsigned int Button_Count = 0;
+
 void setup() {
 
 	// Do some basic MCU initialization
@@ -31,7 +34,18 @@ void setup() {
 }
 
 void loop() {
+	// Handle button reading
 	if(!digitalRead(BUTTON_PIN)) {
+		if(Button_Count < BUTTON_REQUIRED_COUNT) {
+			Button_Count += 1;
+		}
+	}
+	else {
+		Button_Count = 0;
+	}
+
+	// The main loop if the button is pressed
+	if(Button_Count == BUTTON_REQUIRED_COUNT) {
 		bool Module_Active = true;    // Ferris wheel module is currently moving
 
 		motor_group Active_Motor = WHEEL_MOTOR;
@@ -43,13 +57,12 @@ void loop() {
 		setMotorOutput(Active_Motor, true);
 		while(Module_Active) {
 			bool Audio_Playing_Temp = audioPlaying();
-			bool Button_Pressed_Temp = (!digitalRead(BUTTON_PIN));
 
 			if(!Audio_Playing_Temp) {
 				switch(Audio_State) {
 					default:
 					case IDLE: {
-						if(Button_Pressed_Temp) {
+						if(Button_Count == BUTTON_REQUIRED_COUNT) {
 							playAudio(AUDIO_MUSIC);
 							Audio_State = PLAY;
 						}
@@ -69,7 +82,7 @@ void loop() {
 				}
 			}
 			if((millis() - Motor_Cycle_Start) >= MOTOR_CYCLE_TIME[Active_Motor]) {
-				if(Audio_Playing_Temp || Button_Pressed_Temp) {
+				if(Audio_Playing_Temp || (Button_Count == BUTTON_REQUIRED_COUNT)) {
 					switch(Active_Motor) {
 						default:
 						case WHEEL_MOTOR: {
