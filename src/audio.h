@@ -48,6 +48,7 @@ const byte ISD_POWER_UP_DELAY = 50;
 
 // Commands list
 const byte ISD_PU = 0x01;
+const byte ISD_RESET = 0x03;
 const byte ISD_WR_APC2 = 0x65;
 const byte ISD_SET_PLAY = 0x80;
 

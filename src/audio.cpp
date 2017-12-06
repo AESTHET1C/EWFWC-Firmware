@@ -18,6 +18,10 @@ void initAudio() {
 
 	// Initialize ISD1700 device
 	digitalWrite(SPI_SS_PIN, LOW);
+	sendByte(ISD_RESET);
+	sendByte(0x00);
+	digitalWrite(SPI_SS_PIN, HIGH);
+	digitalWrite(SPI_SS_PIN, LOW);
 	sendByte(ISD_PU);
 	sendByte(0x00);
 	digitalWrite(SPI_SS_PIN, HIGH);
